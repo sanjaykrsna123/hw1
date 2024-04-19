@@ -148,5 +148,25 @@ CREATE TABLE Studios (
     name TEXT,
     location TEXT
 );
+CREATE TABLE Movies (
+    movie_id INT PRIMARY KEY,
+    title TEXT,
+    year_released INT,
+    mpaa_rating TEXT,
+    studio_id INT,
+    FOREIGN KEY (studio_id) REFERENCES Studios(studio_id)
+);
 
+CREATE TABLE Actors (
+    actor_id INT PRIMARY KEY,
+    name TEXT
+);
 
+CREATE TABLE Roles (
+    role_id INT PRIMARY KEY,
+    movie_id INT,
+    actor_id INT,
+    character_name TEXT,
+    FOREIGN KEY (movie_id) REFERENCES Movies(movie_id),
+    FOREIGN KEY (actor_id) REFERENCES Actors(actor_id)
+);
