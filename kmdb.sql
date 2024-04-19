@@ -137,3 +137,16 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+DROP TABLE IF EXISTS Roles;
+DROP TABLE IF EXISTS Movies;
+DROP TABLE IF EXISTS Actors;
+DROP TABLE IF EXISTS Studios;
+
+CREATE TABLE Studios (
+    studio_id INT PRIMARY KEY,
+    name TEXT,
+    location TEXT
+);
+
+
